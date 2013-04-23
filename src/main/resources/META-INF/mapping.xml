@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+	<mapping >
+		<class-a>com.apple.iad.beans.IAdByNameBean</class-a>
+		<class-b>com.apple.iad.domain.ReportByName</class-b>
+		<field custom-converter="com.apple.iad.parser.converter.MoneyConverter">
+			<a>revenue</a>
+			<b>revenue</b>
+		</field>
+		<field custom-converter="com.apple.iad.parser.converter.MoneyConverter">
+			<a>ecpm</a>
+			<b>ecpm</b>
+		</field>
+		<field custom-converter="com.apple.iad.parser.converter.PercentConverter">
+			<a>fillRate</a>
+			<b>fillRate</b>
+		</field>
+		<field custom-converter="com.apple.iad.parser.converter.PercentConverter">
+			<a>IAdFillRate</a>
+			<b>IAdFillRate</b>
+		</field>
+		<field custom-converter="com.apple.iad.parser.converter.PercentConverter">
+			<a>ttr</a>
+			<b>ttr</b>
+		</field>
+		<field custom-converter="com.apple.iad.parser.converter.MoneyConverter">
+			<a>requests</a>
+			<b>requests</b>
+		</field>
+		<field custom-converter="com.apple.iad.parser.converter.MoneyConverter">
+			<a>impressions</a>
+			<b>impressions</b>
+		</field>
+	</mapping>
+
+</mappings>
