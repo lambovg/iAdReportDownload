@@ -4,7 +4,7 @@
           http://dozer.sourceforge.net/schema/beanmapping.xsd">
 	<mapping >
 		<class-a>com.apple.iad.beans.IAdByNameBean</class-a>
-		<class-b>com.apple.iad.domain.ReportByName</class-b>
+		<class-b>com.apple.iad.domain.IAdReportByName</class-b>
 		<field custom-converter="com.apple.iad.parser.converter.MoneyConverter">
 			<a>revenue</a>
 			<b>revenue</b>

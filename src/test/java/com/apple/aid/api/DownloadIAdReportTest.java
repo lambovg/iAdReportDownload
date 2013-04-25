@@ -59,7 +59,7 @@ public class DownloadIAdReportTest {
 		verify(director, times(4)).getReportContent();
 	}
 
-	
+	@Test
 	public void fetchReportsByNameForSimpleDate() throws IOException {
 		String content = IOUtils.toString(ClassLoader.getSystemResourceAsStream("report.csv"), ParserByName.REPORT_ENCODING);
 		reportRequest.setDaysGoBack(1);

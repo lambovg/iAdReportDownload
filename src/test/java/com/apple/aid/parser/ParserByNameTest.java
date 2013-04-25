@@ -3,6 +3,8 @@ package com.apple.aid.parser;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +65,9 @@ public class ParserByNameTest {
 		when(director.getReportContent()).thenReturn(content);
 
 		DozerBeanMapper mapper = new DozerBeanMapper();
-		mapper.addMapping(ClassLoader.getSystemResourceAsStream("mapping.xml"));
+		
+		FileInputStream stream = new FileInputStream(new File("src/main/resources/META-INF/mapping.xml"));
+		mapper.addMapping(stream);
 
 		List<IAdReportByName> reports = new ArrayList<IAdReportByName>();
 		for (IAdByNameBean reportContent : reportByName.getReportContent()) {

@@ -4,6 +4,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.io.IOUtils;
@@ -43,6 +44,7 @@ public class ParserByNameMapperTest {
 		String content = IOUtils.toString(ClassLoader.getSystemResourceAsStream("report.csv"), ParserByName.REPORT_ENCODING);
 		
 		when(director.getReportContent()).thenReturn(content);
+		@SuppressWarnings("unchecked")
 		List<IAdReportByName> reportContent = (List<IAdReportByName>) mapper.getReportContent();
 		IAdReportByName name = reportContent.get(0);
 		Assert.assertEquals("Blue Game", name.getName());

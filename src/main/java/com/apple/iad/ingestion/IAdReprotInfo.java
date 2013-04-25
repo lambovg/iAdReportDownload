@@ -1,9 +1,11 @@
 package com.apple.iad.ingestion;
 
+
 /**
  * iAd report content.
  * 
  * @author Georgi Lambov
+ * @param <E>
  * 
  */
 public interface IAdReprotInfo<T> {

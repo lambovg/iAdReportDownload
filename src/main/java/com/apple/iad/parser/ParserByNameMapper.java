@@ -1,5 +1,8 @@
 package com.apple.iad.parser;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +32,15 @@ public class ParserByNameMapper implements IAdReprotInfo<List<IAdReportByName>> 
 	@Override
 	public List<IAdReportByName> getReportContent() {
 		DozerBeanMapper mapper = new DozerBeanMapper();
-		mapper.addMapping(ClassLoader.getSystemResourceAsStream("mapping.xml"));
+		
+		FileInputStream stream = null;
+		try {
+			stream = new FileInputStream(new File("src/main/resources/META-INF/mapping.xml"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		mapper.addMapping(stream);
 		List<IAdReportByName> reports = new ArrayList<IAdReportByName>();
 		for (IAdByNameBean reportContent : parserByName.getReportContent()) {
 			reports.add(mapper.map(reportContent, IAdReportByName.class));
