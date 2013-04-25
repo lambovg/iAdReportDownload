@@ -13,7 +13,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.apple.iad.domain.ReportByName;
+import com.apple.iad.domain.IAdReportByName;
 import com.apple.iad.ingestion.IAdReportInfoDirector;
 import com.apple.iad.ingestion.IAdReprotInfo;
 import com.apple.iad.parser.ParserByName;
@@ -43,8 +43,8 @@ public class ParserByNameMapperTest {
 		String content = IOUtils.toString(ClassLoader.getSystemResourceAsStream("report.csv"), ParserByName.REPORT_ENCODING);
 		
 		when(director.getReportContent()).thenReturn(content);
-		List<ReportByName> reportContent = (List<ReportByName>) mapper.getReportContent();
-		ReportByName name = reportContent.get(0);
+		List<IAdReportByName> reportContent = (List<IAdReportByName>) mapper.getReportContent();
+		IAdReportByName name = reportContent.get(0);
 		Assert.assertEquals("Blue Game", name.getName());
 		Assert.assertEquals("373.96", name.getRevenue().toString());
 		verify(director).getReportContent();

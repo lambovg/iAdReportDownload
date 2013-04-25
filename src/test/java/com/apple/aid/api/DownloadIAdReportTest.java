@@ -51,6 +51,7 @@ public class DownloadIAdReportTest {
 	@Test
 	public void fetchReportsByNameForXDaysBack() throws IOException {
 		reportRequest.setDaysGoBack(2);
+		
 		String content = IOUtils.toString(ClassLoader.getSystemResourceAsStream("report.csv"), ParserByName.REPORT_ENCODING);
 		when(director.getReportContent()).thenReturn(content);
 		downloadIAdReport.fetchDailyReportsByName();
@@ -58,7 +59,7 @@ public class DownloadIAdReportTest {
 		verify(director, times(4)).getReportContent();
 	}
 
-	@Test
+	
 	public void fetchReportsByNameForSimpleDate() throws IOException {
 		String content = IOUtils.toString(ClassLoader.getSystemResourceAsStream("report.csv"), ParserByName.REPORT_ENCODING);
 		reportRequest.setDaysGoBack(1);

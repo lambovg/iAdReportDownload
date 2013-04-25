@@ -1,7 +1,7 @@
 package com.apple.iad.ingestion;
 
-
 /**
+ * iAd report content.
  * 
  * @author Georgi Lambov
  * 
@@ -9,7 +9,7 @@ package com.apple.iad.ingestion;
 public interface IAdReprotInfo<T> {
 
 	/**
-	 * Returns iAd report as stream.
+	 * Returns iAd report content.
 	 */
 	// TODO use void method and remove function argument.
 	T getReportContent();

@@ -16,7 +16,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import com.apple.iad.beans.IAdByNameBean;
-import com.apple.iad.domain.ReportByName;
+import com.apple.iad.domain.IAdReportByName;
 import com.apple.iad.ingestion.IAdReportInfoDirector;
 import com.apple.iad.parser.ParserByName;
 
@@ -65,11 +65,11 @@ public class ParserByNameTest {
 		DozerBeanMapper mapper = new DozerBeanMapper();
 		mapper.addMapping(ClassLoader.getSystemResourceAsStream("mapping.xml"));
 
-		List<ReportByName> reports = new ArrayList<ReportByName>();
+		List<IAdReportByName> reports = new ArrayList<IAdReportByName>();
 		for (IAdByNameBean reportContent : reportByName.getReportContent()) {
-			reports.add(mapper.map(reportContent, ReportByName.class));
+			reports.add(mapper.map(reportContent, IAdReportByName.class));
 		}
-		ReportByName jewel = reports.get(0);
+		IAdReportByName jewel = reports.get(0);
 		Assert.assertEquals("Blue Game", jewel.getName());
 		Assert.assertEquals("0.66", jewel.getEcpm().toString());
 		Assert.assertEquals("373.96", jewel.getRevenue().toString());

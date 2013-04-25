@@ -7,15 +7,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
+ * Collection of reports with their content and meta data.
  * 
  * @author Georgi Lambov
  * 
  */
-public class ReportByNameStory {
+public class IAdReportByNameStory {
 
 	@Getter
 	@Setter
-	private List<ReportByName> report;
+	private List<IAdReportByName> reports;
 	@Getter
 	@Setter
 	private Date fromDate;

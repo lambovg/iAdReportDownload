@@ -6,11 +6,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 
+ * iAd report byName fields. 
  * @author Georgi Lambov
  * 
  */
-public class ReportByName {
+public class IAdReportByName {
 
 	@Getter
 	@Setter

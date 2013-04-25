@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import com.apple.iad.beans.ReportRequestBean;
-import com.apple.iad.domain.ReportByNameStory;
+import com.apple.iad.domain.IAdReportByNameStory;
 import com.apple.iad.ingestion.IAdReportInfoDirector;
 import com.apple.iad.ingestion.builder.IAdReportByNameBuilder;
 import com.apple.iad.parser.ParserByName;
@@ -34,7 +34,7 @@ public class DownloadIAdReport {
 	 * 
 	 * @return
 	 */
-	public List<ReportByNameStory> fetchDailyReportsByName() {
+	public List<IAdReportByNameStory> fetchDailyReportsByName() {
 		if (reportRequest.getDaysGoBack() <= 0) {
 			throw new IllegalArgumentException("daysGoback can't be <= 0");
 		}
@@ -45,7 +45,7 @@ public class DownloadIAdReport {
 
 		director.setReportBuilder(new IAdReportByNameBuilder());
 
-		List<ReportByNameStory> stories = new ArrayList<ReportByNameStory>();
+		List<IAdReportByNameStory> stories = new ArrayList<IAdReportByNameStory>();
 
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(reportRequest.getFromDate());
@@ -58,18 +58,18 @@ public class DownloadIAdReport {
 			director.constructReport(reportRequest);
 			ParserByNameMapper parserMapper = new ParserByNameMapper(new ParserByName(director));
 
-			ReportByNameStory story = new ReportByNameStory();
+			IAdReportByNameStory story = new IAdReportByNameStory();
 			story.setContent(director.getReportContent());
 			story.setFromDate(calendar.getTime());
 			story.setToDate(calendar.getTime());
-			story.setReport(parserMapper.getReportContent());
+			story.setReports(parserMapper.getReportContent());
 			stories.add(story);
 		}
 
 		return stories;
 	}
 
-	public List<ReportByNameStory> fetchDailyReportsByNameWithRange() {
+	public List<IAdReportByNameStory> fetchDailyReportsByNameWithRange() {
 		// TODO implementation
 		return null;
 	}
