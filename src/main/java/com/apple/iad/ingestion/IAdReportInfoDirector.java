@@ -55,14 +55,13 @@ public class IAdReportInfoDirector implements IAdReprotInfo<String> {
 	 */
 	public String getReportContent() {
 		String content = null;
-		
+
 		try {
 			content = IOUtils.toString(contentStep.getReportContent(), ParserByName.REPORT_ENCODING);
-			contentStep.getReportContent().close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+		
 		return content;
 	}
 

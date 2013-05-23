@@ -40,7 +40,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.apple.iad.api.DownloadIAdReport;
 import com.apple.iad.beans.ReportRequestBean;
+import com.apple.iad.domain.IAdReportByNameStory;
 import com.apple.iad.ingestion.IAdReportInfoDirector;
 import com.apple.iad.ingestion.builder.IAdReportByNameBuilder;
 
@@ -235,6 +237,24 @@ public class IadDownloadIntegrationTest {
 		director.constructReport(requestBean);
 
 		Assert.assertNotNull(director.getReportContent());
+	}
+	
+	@Test
+	public void downloadReportUsingApiInterface() {
+		ReportRequestBean requestBean = new ReportRequestBean();
+		requestBean.setFromDate(new Date());
+		requestBean.setDaysGoBack(1);
+		requestBean.setProviderId(Long.valueOf(prop.getProperty("iad.publisher")));
+		requestBean.setUsername(prop.getProperty("iad.username"));
+		requestBean.setPassword(prop.getProperty("iad.password"));
+		
+		DownloadIAdReport downloadIAdReport = new DownloadIAdReport();
+		downloadIAdReport.setReportRequest(requestBean);
+		List<IAdReportByNameStory> fetchDailyReportsByName = downloadIAdReport.fetchDailyReportsByName();
+		
+		Assert.assertNotNull(fetchDailyReportsByName);
+		
+		System.out.println(fetchDailyReportsByName.get(0).getReports());
 	}
 
 }

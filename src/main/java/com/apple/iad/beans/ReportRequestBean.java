@@ -53,7 +53,7 @@ public class ReportRequestBean {
 	public static final String REPORT_TYPE_BY_NAME = "byName";
 	public static final String REPORT_TYPE_BY_COUNTRY = "byCountry";
 	public static final String REPORT_TYPE_BY_DATES = "byDates";
-	public static final String DATE_RANGE_CUSTOM = "customDate";
+	public static final String DATE_RANGE_CUSTOM = "customDateRange";
 	public static final String DATE_RANGE_FOURTEEN_DAYS = "fourteenDays";
 
 }
