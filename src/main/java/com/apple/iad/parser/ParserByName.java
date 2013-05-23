@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.bean.CsvToBean;
 import au.com.bytecode.opencsv.bean.HeaderColumnNameTranslateMappingStrategy;
@@ -48,6 +51,10 @@ public class ParserByName extends IAdReportParser implements IAdReprotInfo<List<
 		super(director);
 	}
 
+	@Getter
+	@Setter
+	private String content;
+
 	@Override
 	public List<IAdByNameBean> getReportContent() {
 		Map<String, String> columns = new HashMap<String, String>();
@@ -66,7 +73,7 @@ public class ParserByName extends IAdReportParser implements IAdReprotInfo<List<
 		CsvToBean<IAdByNameBean> csv = new CsvToBean<IAdByNameBean>();
 
 		CSVReader reader = null;
-		reader = new CSVReader(new StringReader(director.getReportContent()));
+		reader = new CSVReader(new StringReader(content == null ? director.getReportContent() : content));
 
 		List<IAdByNameBean> mappedData;
 		mappedData = csv.parse(strat, reader);

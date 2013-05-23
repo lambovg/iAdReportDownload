@@ -56,10 +56,14 @@ public class DownloadIAdReport {
 			reportRequest.setFromDate(calendar.getTime());
 
 			director.constructReport(reportRequest);
-			ParserByNameMapper parserMapper = new ParserByNameMapper(new ParserByName(director));
+			String content = director.getReportContent();
+
+			ParserByName parserByName = new ParserByName(director);
+			parserByName.setContent(content);
+			ParserByNameMapper parserMapper = new ParserByNameMapper(parserByName);
 
 			IAdReportByNameStory story = new IAdReportByNameStory();
-			story.setContent(director.getReportContent());
+			story.setContent(content);
 			story.setFromDate(calendar.getTime());
 			story.setToDate(calendar.getTime());
 			story.setReports(parserMapper.getReportContent());

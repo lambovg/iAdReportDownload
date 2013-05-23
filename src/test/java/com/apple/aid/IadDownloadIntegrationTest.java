@@ -253,8 +253,7 @@ public class IadDownloadIntegrationTest {
 		List<IAdReportByNameStory> fetchDailyReportsByName = downloadIAdReport.fetchDailyReportsByName();
 		
 		Assert.assertNotNull(fetchDailyReportsByName);
-		
-		System.out.println(fetchDailyReportsByName.get(0).getReports());
+		Assert.assertNotNull(fetchDailyReportsByName.iterator().next().getReports().iterator().next());
 	}
 
 }
