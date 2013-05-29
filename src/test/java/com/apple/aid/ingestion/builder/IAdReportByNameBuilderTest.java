@@ -82,7 +82,7 @@ public class IAdReportByNameBuilderTest {
 		b.buildReportUrl();
 
 		Assert.assertEquals(
-				"https://iad.apple.com/itcportal/generatecsv?pageName=app_homepage&dashboardType=publisher&publisherId=1&dateRange=customDate&searchTerms=Search%2520Apps&adminFlag=false&fromDate=04%2F04%2F13&toDate=04%2F04%2F13&dataType=byName",
+				"https://iad.apple.com/itcportal/generatecsv?pageName=app_homepage&dashboardType=publisher&publisherId=1&dateRange=customDateRange&searchTerms=Search%2520Apps&adminFlag=false&fromDate=04%2F04%2F13&toDate=04%2F04%2F13&dataType=byName",
 				info.getReportUrl().toString());
 	}
 
