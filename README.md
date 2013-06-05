@@ -35,6 +35,7 @@ There is pending TODO task for this
 
 ### TODO
 
+* Meaningful exception handling.
 * PublisherId should be get automatically. Currently in the integration you need to hardcode it.
 * Optimize report downloading flow- login in iAd only for the first report, for rest of the reports use session cookie.
 If cookie is invlaid - re-log in to iAd and cotitnue with session cookie.
