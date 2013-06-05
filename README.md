@@ -39,14 +39,20 @@ There is pending TODO task for this
 * Optimize report downloading flow- login in iAd only for the first report, for rest of the reports use session cookie.
 If cookie is invlaid - re-log in to iAd and cotitnue with session cookie.
 * Fix typo in test package name.
-* Fix library integration and requirements to add additional maven depednecies.
 
 ### Version History
+
+#### 1.0.3.RELEASE
+
+* Maven shade plugin
+
+#### 1.0.2.RELEASE
+
+* Update iAd paramter name for customDateRange reports selections.
 
 #### 1.0.1.RELEASE 
 
 * Fixed HTTP response stream caching to prevent empty bean in mapping when multiple reports are donwloaded.
-* Update iAd paramter name for customDateRange reports selections.
 
 #### 1.0.0.RELEASE
 

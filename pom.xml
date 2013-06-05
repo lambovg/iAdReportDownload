@@ -4,7 +4,7 @@
 	<groupId>com.apple.iad</groupId>
 	<artifactId>iad-report-ingestion</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.2.RELEASE</version>
+	<version>1.0.3.RELEASE</version>
 	<name>iad-report-ingestion</name>
 	<url>http://maven.apache.org</url>
 	<properties>
@@ -86,6 +86,17 @@
 					<printSummary>false</printSummary>
 					<redirectTestOutputToFile>true</redirectTestOutputToFile>
 				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-shade-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
