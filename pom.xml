@@ -4,7 +4,7 @@
 	<groupId>com.apple.iad</groupId>
 	<artifactId>iad-report-ingestion</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.3.RELEASE</version>
+	<version>1.0.4.RELEASE</version>
 	<name>iad-report-ingestion</name>
 	<url>http://maven.apache.org</url>
 	<properties>

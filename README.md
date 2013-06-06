@@ -7,7 +7,7 @@ You should edit src/test/java/iad.properties to run integration tests.
 
 ### Version
 
-Latest version is 1.0.1.RELEASE.
+Latest version is 1.0.4.RELEASE.
 
 ### Compiling
 
@@ -42,6 +42,10 @@ If cookie is invlaid - re-log in to iAd and cotitnue with session cookie.
 * Fix typo in test package name.
 
 ### Version History
+
+#### 1.0.4.RELEASE
+
+* Fixed dozer mapping.xml should be loaded from classpath.
 
 #### 1.0.3.RELEASE
 
